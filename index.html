@@ -1661,7 +1661,7 @@ function tipsHTML(D){
    D.tips.map(function(t){return '<div class="card"><h3>'+esc(t.title)+'</h3><p>'+esc(t.text)+'</p></div>';}).join('')+
   '</div></div></section>';
 }
-function footerHTML(){return '<footer><div class="wrap"><div class="fd">Wesołych Świąt, Mamo!</div><p>Do zobaczenia na Victorii.</p></div></footer>';}
+function footerHTML(){return '<footer><div class="wrap"><div class="fd">Wesołych Świąt, Mamo!</div></div></footer>';}
 
 /* ---------- EDIT ---------- */
 function opt(map,val){return Object.keys(map).map(function(k){var n=typeof map[k]==='string'?map[k]:map[k].n;return '<option value="'+k+'"'+(k===val?' selected':'')+'>'+esc(n)+'</option>';}).join('');}
