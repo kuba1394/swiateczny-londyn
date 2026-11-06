@@ -718,7 +718,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .maptools{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .pin{width:22px;height:22px;margin:3px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--pc);border:2px solid #0D1613;box-shadow:0 2px 6px rgba(0,0,0,.5);display:grid;place-items:center}
 .pin svg{width:14px;height:14px;transform:rotate(45deg)}
-.pin.vis{background:#FF5FA8;border:2px solid #FFFFFF;box-shadow:0 0 0 3px rgba(255,95,168,.35),0 2px 6px rgba(0,0,0,.5)}
+.pin.vis{background:#012169;border:2px solid #FFFFFF;overflow:hidden;width:26px;height:26px;margin:1px;box-shadow:0 0 0 2px rgba(200,16,46,.55),0 2px 6px rgba(0,0,0,.5)}
+.pin .uk{width:36px;height:36px;transform:rotate(45deg);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3CclipPath id='t'%3E%3Cpath d='M30,15h30v15zv15h-30zh-30v-15zv-15h30z'/%3E%3C/clipPath%3E%3Cpath d='M0,0v30h60v-30z' fill='%23012169'/%3E%3Cpath d='M0,0L60,30M60,0L0,30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0,0L60,30M60,0L0,30' clip-path='url(%23t)' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30,0v30M0,15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30,0v30M0,15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E") center/auto 100% no-repeat}
 .mpopwrap .leaflet-popup-content-wrapper,.mpopwrap .leaflet-popup-tip{background:#14201C;color:#ECF1EE;border:1px solid #263731}
 .mpopwrap .leaflet-popup-content{margin:12px 14px;font:14px/1.4 var(--f-body)}
 .mpop b{display:block;font-size:15px;margin:2px 0 4px}
@@ -2863,7 +2864,7 @@ function mapHTML(D){
       return '<button class="mchip'+(mapFilter===c[0]?' on':'')+'" data-mf="'+c[0]+'" style="--mc:'+col+'">'+(c[0]!=='all'?'<i></i>':'')+esc(c[1])+'</button>';}).join('')+'</div>'+
     '<div id="londonmap" class="londonmap" role="application" aria-label="Mapa Londynu z miejscami z przewodnika"><div class="map-wait">Ładuję mapę…</div></div>'+
     '<div class="maptools"><button class="btn" data-mapfit="1">Pokaż wszystkie</button><button class="btn" data-mapme="1">Gdzie jestem?</button></div>'+
-    '<p class="cknote">Kliknij pinezkę i zaznacz „Byliśmy tu”, a pinezka zrobi się różowa z ptaszkiem. Zaznaczenia zapisują się w tej przeglądarce, na tym urządzeniu.</p></div></section>';
+    '<p class="cknote">Kliknij pinezkę i zaznacz „Byliśmy tu”, a pinezka zmieni się we flagę Wielkiej Brytanii. Zaznaczenia zapisują się w tej przeglądarce, na tym urządzeniu.</p></div></section>';
 }
 function loadLeaflet(){
   if(window.L) return Promise.resolve();
@@ -2878,7 +2879,7 @@ var THAMES=[[51.4789,-0.1950],[51.4818,-0.1765],[51.4846,-0.1600],[51.4870,-0.14
 function pinIcon(p,vis){
   var col=p.day<0?EXTRACOL:DAYCOL[p.day%DAYCOL.length];
   return L.divIcon({className:'',iconSize:[28,28],iconAnchor:[14,26],popupAnchor:[0,-22],
-    html:'<div class="pin'+(vis?' vis':'')+'" style="--pc:'+col+'">'+(vis?'<svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10" fill="none" stroke="#10261E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>':'')+'</div>'});
+    html:'<div class="pin'+(vis?' vis':'')+'" style="--pc:'+col+'">'+(vis?'<i class="uk"></i>':'')+'</div>'});
 }
 function popupHTML(p,vis){
   return '<div class="mpop"><div class="mpop-d" style="color:'+(p.day<0?EXTRACOL:DAYCOL[p.day%DAYCOL.length])+'">'+esc(p.day<0?p.dow:p.when.join(' · '))+'</div><b>'+esc(p.full)+'</b>'+(p.step&&p.step!==p.full?'<div class="mpop-s">w planie: '+esc(p.step)+'</div>':'')+
