@@ -719,7 +719,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .pin{width:22px;height:22px;margin:3px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--pc);border:2px solid #0D1613;box-shadow:0 2px 6px rgba(0,0,0,.5);display:grid;place-items:center}
 .pin svg{width:14px;height:14px;transform:rotate(45deg)}
 .pin.vis{background:#012169;border:2px solid #FFFFFF;overflow:hidden;width:26px;height:26px;margin:1px;box-shadow:0 0 0 2px rgba(200,16,46,.55),0 2px 6px rgba(0,0,0,.5)}
-.pin .uk{width:36px;height:36px;transform:rotate(45deg);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3CclipPath id='t'%3E%3Cpath d='M30,15h30v15zv15h-30zh-30v-15zv-15h30z'/%3E%3C/clipPath%3E%3Cpath d='M0,0v30h60v-30z' fill='%23012169'/%3E%3Cpath d='M0,0L60,30M60,0L0,30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0,0L60,30M60,0L0,30' clip-path='url(%23t)' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30,0v30M0,15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30,0v30M0,15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E") center/auto 100% no-repeat}
+.pin.vis{position:relative}
+.pin .uk{position:absolute;left:50%;top:50%;width:30px;height:30px;margin:-15px 0 0 -15px;transform:rotate(45deg);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3CclipPath id='t'%3E%3Cpath d='M30,15h30v15zv15h-30zh-30v-15zv-15h30z'/%3E%3C/clipPath%3E%3Cpath d='M0,0v30h60v-30z' fill='%23012169'/%3E%3Cpath d='M0,0L60,30M60,0L0,30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0,0L60,30M60,0L0,30' clip-path='url(%23t)' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30,0v30M0,15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30,0v30M0,15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E") center/auto 78% no-repeat}
 .mpopwrap .leaflet-popup-content-wrapper,.mpopwrap .leaflet-popup-tip{background:#14201C;color:#ECF1EE;border:1px solid #263731}
 .mpopwrap .leaflet-popup-content{margin:12px 14px;font:14px/1.4 var(--f-body)}
 .mpop b{display:block;font-size:15px;margin:2px 0 4px}
@@ -2135,7 +2136,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "dur": 30,
      "place": "Hyde Park Corner Station, London"
     }
-   ]
+   ],
+   "mymap": "https://www.google.com/maps/d/u/0/edit?mid=13hxAp3jKfI_P-Gg_dNI4HAuRHziMgco&usp=sharing"
   },
   {
    "id": "d26",
@@ -2287,7 +2289,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "lock": true,
      "dur": 30
     }
-   ]
+   ],
+   "mymap": "https://www.google.com/maps/d/u/0/edit?mid=1O8lvA_RqUqAF7cl5wVb7HlXsLTWLc2U&usp=sharing"
   }
  ],
  "info": [
@@ -2945,10 +2948,11 @@ document.addEventListener('click',function(ev){
   }
 });
 
-var TABS=[['plan','Przewodnik'],['mapa','Mapa'],['pogoda','Pogoda'],['jedzenie','Do spróbowania'],['dodatkowe','Jeśli starczy czasu'],['lista','Checklista'],['kalendarz','Kalendarz'],['logistyka','Informacje'],['porady','Porady']];
+var TABS=[['plan','Przewodnik'],['mapa','Mapa'],['pogoda','Pogoda'],['jedzenie','Do spróbowania'],['dodatkowe','Jeśli starczy czasu'],['lista','Checklista'],['logistyka','Informacje'],['porady','Porady']];
 var tab='plan';
 function tabFromHash(){
   var h=(location.hash||'').slice(1);
+  if(h==='kalendarz') return 'plan';
   if(TABS.some(function(x){return x[0]===h;})) return h;
   if((data.days||[]).some(function(d){return d.id===h;})) return 'plan';
   return null;
@@ -2960,14 +2964,14 @@ function navHTML(){
 function tabHTML(D){
   switch(tab){
     case 'mapa': return mapHTML(D);
-    case 'kalendarz': return adventHTML(D);
+    case 'kalendarz': return adventHTML(D)+dayHTML(D);
     case 'pogoda': return weatherHTML(D);
     case 'logistyka': return infoHTML(D);
     case 'lista': return listHTML(D);
     case 'jedzenie': return listHTML(D,'food');
     case 'dodatkowe': return extrasHTML(D);
     case 'porady': return tipsHTML(D);
-    default: return dayHTML(D);
+    default: return adventHTML(D)+dayHTML(D);
   }
 }
 function selectTab(id){
