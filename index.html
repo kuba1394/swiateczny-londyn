@@ -156,6 +156,7 @@ section{padding-block:34px 8px}
 .btn:hover{border-color:var(--green)}
 .btn.primary{background:var(--green);border-color:var(--green);color:var(--bg)}
 .btn.red{background:var(--red);border-color:var(--red);color:var(--red-ink)}
+.btn.gold{background:#3a3016;border-color:#6a5626;color:var(--hero-gold)}
 .btn svg{width:16px;height:16px}
 
 /* Timeline */
@@ -266,7 +267,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
   "subtitle": "Mama, brat i ja · 22–26 listopada 2026",
   "start": "2026-11-22T05:00:00Z",
   "end": "2026-11-26T19:05:00Z",
-  "intro": ""
+  "intro": "",
+  "foodmap": "https://www.google.com/maps/d/u/3/viewer?mid=1-eIKgEmzTlx8efrSOXKAnV4ZEaWX-7I&ll=51.49403344144414%2C-0.10667219999999755&z=12"
  },
  "days": [
   {
@@ -286,7 +288,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "",
      "q": "52.1672,20.9679",
      "r": false,
-     "dur": 45
+     "dur": 45,
+     "place": "Lotnisko Chopina w Warszawie"
     },
     {
      "t": "05:00",
@@ -297,7 +300,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "",
      "q": "52.1672,20.9679",
      "r": false,
-     "dur": 60
+     "dur": 60,
+     "place": "Lotnisko Chopina w Warszawie"
     },
     {
      "t": "06:00",
@@ -321,7 +325,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.8763,-0.3717",
      "r": false,
      "lock": true,
-     "dur": 75
+     "dur": 75,
+     "place": "London Luton Airport"
     },
     {
      "t": "08:55",
@@ -343,7 +348,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "bus",
      "q": "51.4925,-0.1487",
      "r": false,
-     "dur": 15
+     "dur": 15,
+     "place": "Victoria Coach Station, London"
     },
     {
      "t": "10:15",
@@ -354,18 +360,21 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "walk",
      "q": "51.4962,-0.1422",
      "r": false,
-     "dur": 15
+     "dur": 15,
+     "place": "Bounce Luggage Storage, 330A Vauxhall Bridge Rd, London SW1V 1AA"
     },
     {
      "t": "10:30",
      "kind": "food",
-     "title": "Śniadanie i kawa w okolicy Victorii",
-     "note": "Na spokojnie, po podróży. Śniadanie z kawką niedaleko Victoria Street i placu przed katedrą.",
-     "move": "",
-     "line": "",
-     "q": "",
+     "title": "Regency Cafe: brunch",
+     "note": "Kultowa londyńska kawiarnia z angielskim śniadaniem, jak z filmu, ok. 12 min pieszo od przechowalni i katedry. Uwaga: według części źródeł w niedziele jest zamknięta, sprawdźcie godziny przed wyjazdem. Plan B: śniadanie przy Victoria Street.",
+     "move": "pieszo ok. 12 min",
+     "line": "walk",
+     "q": "51.4940,-0.1322",
      "r": false,
-     "dur": 75
+     "dur": 75,
+     "img": "regency",
+     "place": "Regency Cafe, 17-19 Regency St, London SW1P 4BY"
     },
     {
      "t": "11:45",
@@ -378,21 +387,11 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "r": false,
      "img": "westminster-cathedral",
      "lock": true,
-     "dur": 90
+     "dur": 90,
+     "place": "Westminster Cathedral, London"
     },
     {
      "t": "13:15",
-     "kind": "food",
-     "title": "Obiad przy Victorii",
-     "note": "W niedzielę City jest prawie puste i większość lokali jest tam zamknięta, więc jemy jeszcze w okolicy Victorii.",
-     "move": "",
-     "line": "",
-     "q": "",
-     "r": false,
-     "dur": 50
-    },
-    {
-     "t": "14:05",
      "kind": "train",
      "title": "Victoria → Monument",
      "note": "Pociąg w kierunku wschodnim (Upminster / Edgware Road przez City). Z Monument ok. 10 min pieszo do Horizon 22.",
@@ -400,10 +399,11 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "district",
      "q": "51.5108,-0.0863",
      "r": true,
-     "dur": 25
+     "dur": 30,
+     "place": "Monument Station, London"
     },
     {
-     "t": "14:30",
+     "t": "13:45",
      "kind": "sight",
      "title": "Horizon 22: Londyn z 58. piętra",
      "note": "Najwyższy darmowy taras widokowy w Europie, 22 Bishopsgate. Widać całe miasto: Tower Bridge, katedrę św. Pawła, Shard, a w oddali Westminster i London Eye, czyli wszystko, co zwiedzamy w kolejne dni. Wstęp wolny, ale trzeba zarezerwować godzinę online. W niedzielę czynne tylko do 16:00.",
@@ -412,11 +412,12 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5146,-0.0833",
      "r": true,
      "img": "horizon22",
-     "lock": true,
-     "dur": 50
+     "lock": false,
+     "dur": 50,
+     "place": "Horizon 22, 22 Bishopsgate, London"
     },
     {
-     "t": "15:20",
+     "t": "14:35",
      "kind": "xmas",
      "title": "Leadenhall Market",
      "note": "Wiktoriańska hala ze szklanym dachem i świątecznymi światłami (od 19.11). W „Kamieniu Filozoficznym” to tu Hagrid prowadzi Harry'ego na Ulicę Pokątną. W zaułku Bull's Head Passage szukamy niebieskich drzwi: to wejście do Dziurawego Kotła. W niedzielę sklepy są zamknięte.",
@@ -425,10 +426,11 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5128,-0.0835",
      "r": true,
      "img": "leadenhall",
-     "dur": 25
+     "dur": 25,
+     "place": "Leadenhall Market, London"
     },
     {
-     "t": "15:45",
+     "t": "15:00",
      "kind": "sight",
      "title": "Spacer do Tower Pier",
      "note": "Po drodze mijamy mury Tower of London. Słońce zachodzi ok. 16:00.",
@@ -437,10 +439,11 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5072,-0.0802",
      "r": true,
      "img": "tower",
-     "dur": 20
+     "dur": 20,
+     "place": "Tower Millennium Pier, London"
     },
     {
-     "t": "16:05",
+     "t": "15:20",
      "kind": "bus",
      "title": "Uber Boat: Tower Pier → London Eye Pier",
      "note": "Rejs po Tamizie o zmierzchu, ok. 25 min: pod London Bridge, obok Shard, Globe Theatre i katedry św. Pawła. Płyniemy pod Millennium Bridge, który śmierciożercy niszczą na początku „Księcia Półkrwi”. Płacimy zbliżeniowo przy wejściu na przystań (każdy swoją kartą, tą samą przy wyjściu). Najlepsze widoki z tylnego pokładu.",
@@ -449,10 +452,11 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5034,-0.1197",
      "r": false,
      "img": "uberboat",
-     "dur": 30
+     "dur": 30,
+     "place": "London Eye Pier, London"
     },
     {
-     "t": "16:35",
+     "t": "15:50",
      "kind": "xmas",
      "title": "Southbank Centre Winter Market",
      "note": "Wysiadamy na London Eye Pier, tuż przy kole i jarmarku. Drewniane domki nad Tamizą, grzaniec, kolacja z budek? Stoiska czynne do 22:00.",
@@ -461,10 +465,11 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5050,-0.1180",
      "r": false,
      "img": "southbank",
-     "dur": 100
+     "dur": 100,
+     "place": "Southbank Centre Winter Market, London"
     },
     {
-     "t": "18:15",
+     "t": "17:30",
      "kind": "sight",
      "title": "Westminster Bridge i Big Ben nocą",
      "note": "Spacer brzegiem rzeki obok podświetlonego London Eye i przez most. Parlament nocą to jedno z najpiękniejszych zdjęć w Londynie.",
@@ -473,10 +478,11 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5008,-0.1219",
      "r": false,
      "img": "bigben",
-     "dur": 30
+     "dur": 30,
+     "place": "Westminster Bridge, London"
     },
     {
-     "t": "18:45",
+     "t": "18:00",
      "kind": "train",
      "title": "Westminster → Victoria",
      "note": "2 przystanki.",
@@ -484,10 +490,11 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "district",
      "q": "51.4965,-0.1447",
      "r": false,
-     "dur": 15
+     "dur": 15,
+     "place": "London Victoria Station"
     },
     {
-     "t": "19:00",
+     "t": "18:15",
      "kind": "bag",
      "title": "Bounce: odbieramy bagaże",
      "note": "Czynne do 21:30, więc mamy zapas.",
@@ -495,10 +502,11 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "walk",
      "q": "51.4962,-0.1422",
      "r": false,
-     "dur": 15
+     "dur": 15,
+     "place": "Bounce Luggage Storage, 330A Vauxhall Bridge Rd, London SW1V 1AA"
     },
     {
-     "t": "19:15",
+     "t": "18:30",
      "kind": "train",
      "title": "Victoria → Stockwell",
      "note": "2 przystanki. Ze stacji ok. 3 min pieszo.",
@@ -506,10 +514,11 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "victoria",
      "q": "51.4723,-0.1228",
      "r": false,
-     "dur": 15
+     "dur": 15,
+     "place": "Stockwell Station, London"
     },
     {
-     "t": "19:30",
+     "t": "18:45",
      "kind": "home",
      "title": "Zameldowanie: Apartament 12 (2. piętro)",
      "note": "346a South Lambeth Road, SW8 1UQ. Późne zameldowanie jest możliwe. Ten apartament tylko na jedną noc. Odpoczynek po bardzo długim dniu.",
@@ -517,9 +526,11 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "walk",
      "q": "51.4733,-0.1222",
      "r": false,
-     "dur": 30
+     "dur": 30,
+     "place": "346A South Lambeth Rd, London SW8 1UQ"
     }
-   ]
+   ],
+   "mymap": "https://www.google.com/maps/d/u/0/edit?mid=12DBNbPbNUucAI3CAyBHENU12TH4ohB4&usp=sharing"
   },
   {
    "id": "d23",
@@ -527,7 +538,7 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
    "dow": "Poniedziałek",
    "num": "23",
    "title": "Królewski Londyn i świąteczne światła",
-   "summary": "Przeprowadzka piętro niżej o 10:00, potem Zmiana Warty, Opactwo Westminsterskie i długi spacer po West Endzie śladami Harry'ego Pottera: budka Ministerstwa Magii, zaułki jak z Ulicy Pokątnej, galeria MinaLima i nowy sklep Harry'ego Pottera. Po zmroku iluminacje Covent Garden, Regent Street, Carnaby i Oxford Street. Pieszo łącznie ok. 2 h.",
+   "summary": "Przeprowadzka piętro niżej o 10:00, potem Zmiana Warty, Opactwo Westminsterskie z zewnątrz, National Gallery i długi spacer po West Endzie śladami Harry'ego Pottera: budka Ministerstwa Magii, zaułki jak z Ulicy Pokątnej, galeria MinaLima i nowy sklep Harry'ego Pottera. Po zmroku iluminacje Covent Garden, Regent Street, Carnaby i Oxford Street. Pieszo łącznie ok. 2 h.",
    "events": [
     {
      "t": "08:30",
@@ -550,7 +561,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.4733,-0.1222",
      "r": false,
      "lock": true,
-     "dur": 15
+     "dur": 15,
+     "place": "346A South Lambeth Rd, London SW8 1UQ"
     },
     {
      "t": "10:15",
@@ -561,7 +573,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "victoria",
      "q": "51.5069,-0.1429",
      "r": true,
-     "dur": 25
+     "dur": 25,
+     "place": "Green Park Station, London"
     },
     {
      "t": "10:40",
@@ -574,7 +587,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "r": true,
      "img": "guard",
      "lock": true,
-     "dur": 70
+     "dur": 70,
+     "place": "Buckingham Palace, London"
     },
     {
      "t": "11:50",
@@ -586,34 +600,24 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5030,-0.1340",
      "r": true,
      "img": "stjames",
-     "dur": 30
+     "dur": 30,
+     "place": "St James's Park, London"
     },
     {
      "t": "12:20",
-     "kind": "food",
-     "title": "Regency Cafe: brunch",
-     "note": "Kultowa londyńska kawiarnia z angielskim śniadaniem, jak z filmu. Bywa kolejka. Otwarta zwykle do wczesnego popołudnia.",
-     "move": "pieszo ok. 15 min",
-     "line": "walk",
-     "q": "51.4940,-0.1322",
-     "r": true,
-     "img": "regency",
-     "dur": 60
-    },
-    {
-     "t": "13:20",
      "kind": "church",
-     "title": "Westminster Abbey",
-     "note": "Miejsce koronacji i ślubów królewskich. Bilety online (dorośli £32, 65+ £29). Otwarte do 15:30, zwiedzanie ok. 1,5 h z audioprzewodnikiem po polsku.",
-     "move": "pieszo ok. 10 min",
+     "title": "Westminster Abbey z zewnątrz",
+     "note": "Miejsce koronacji i ślubów królewskich. Oglądamy fasadę i dziedziniec od strony Parliament Square, bez wchodzenia do środka (bilety są drogie). Obok mały kościół St Margaret’s.",
+     "move": "pieszo ok. 8 min",
      "line": "walk",
      "q": "51.4994,-0.1273",
      "r": true,
      "img": "abbey",
-     "dur": 90
+     "dur": 20,
+     "place": "Westminster Abbey, London"
     },
     {
-     "t": "14:50",
+     "t": "12:40",
      "kind": "sight",
      "title": "Big Ben i Parlament",
      "note": "Zdjęcie z Westminster Bridge albo z Parliament Square. Obok stacja metra Westminster, przez którą Harry i pan Weasley jadą do Ministerstwa Magii w „Zakonie Feniksa”.",
@@ -622,10 +626,11 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5007,-0.1246",
      "r": true,
      "img": "bigben",
-     "dur": 20
+     "dur": 20,
+     "place": "Big Ben, London"
     },
     {
-     "t": "15:10",
+     "t": "13:00",
      "kind": "sight",
      "title": "Whitehall: Downing Street i Horse Guards",
      "note": "Konni gwardziści przy Horse Guards. Na rogu Scotland Place i Great Scotland Yard stała w filmach czerwona budka telefoniczna, czyli wejście dla gości do Ministerstwa Magii.",
@@ -633,34 +638,61 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "walk",
      "q": "51.5048,-0.1272",
      "r": true,
-     "dur": 25
+     "dur": 25,
+     "place": "Horse Guards Parade, London"
     },
     {
-     "t": "15:35",
+     "t": "13:25",
      "kind": "xmas",
      "title": "Trafalgar Square",
-     "note": "Lwy, Kolumna Nelsona i mały jarmark świąteczny. Wielka choinka z Norwegii staje dopiero na początku grudnia. Chętni mogą na 30 min zajrzeć do National Gallery (wstęp wolny).",
+     "note": "Lwy, Kolumna Nelsona i mały jarmark świąteczny. Wielka choinka z Norwegii staje dopiero na początku grudnia.",
      "move": "pieszo ok. 5 min",
      "line": "walk",
      "q": "51.5080,-0.1281",
      "r": true,
      "img": "trafalgar",
-     "dur": 40
+     "dur": 20,
+     "place": "Trafalgar Square, London"
     },
     {
-     "t": "16:15",
+     "t": "13:45",
+     "kind": "sight",
+     "title": "National Gallery",
+     "note": "Tuż przy Trafalgar Square, wstęp wolny. Mamy ok. 1,5 h na najsłynniejsze obrazy: Słoneczniki Van Gogha, Wóz z sianem Constable'a, Turnera, Portret Arnolfinich Van Eycka i Madonnę w grocie Leonarda. Otwarte do 18:00.",
+     "move": "pieszo ok. 2 min",
+     "line": "walk",
+     "q": "51.5089,-0.1283",
+     "r": true,
+     "dur": 90,
+     "place": "National Gallery, London"
+    },
+    {
+     "t": "15:15",
+     "kind": "sight",
+     "title": "Cecil Court i Goodwin's Court",
+     "note": "Dwa wąskie zaułki z wiktoriańskimi witrynami i lampami gazowymi. Często mówi się, że to one zainspirowały Ulicę Pokątną. Cecil Court to ulica antykwariatów i starych księgarń.",
+     "move": "pieszo ok. 4 min",
+     "line": "walk",
+     "q": "51.5107,-0.1272",
+     "r": true,
+     "dur": 10,
+     "place": "Cecil Court, London"
+    },
+    {
+     "t": "15:25",
      "kind": "xmas",
      "title": "Covent Garden",
      "note": "Wielka choinka, jemioła i renifery z lampek, Apple Market. Najpiękniej zaraz po zmroku.",
-     "move": "pieszo ok. 8 min",
+     "move": "pieszo ok. 6 min",
      "line": "walk",
      "q": "51.5120,-0.1228",
      "r": true,
      "img": "covent",
-     "dur": 45
+     "dur": 35,
+     "place": "Covent Garden Market, London"
     },
     {
-     "t": "17:00",
+     "t": "16:00",
      "kind": "xmas",
      "title": "Seven Dials i Neal's Yard",
      "note": "Kolorowe podwórko Neal's Yard i świąteczne dekoracje Seven Dials.",
@@ -669,54 +701,59 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5146,-0.1265",
      "r": true,
      "img": "nealsyard",
-     "dur": 25
+     "dur": 20,
+     "place": "Neal's Yard, London"
     },
     {
-     "t": "17:25",
-     "kind": "sight",
-     "title": "Cecil Court i Goodwin's Court",
-     "note": "Dwa wąskie zaułki z wiktoriańskimi witrynami i lampami gazowymi. Często mówi się, że to one zainspirowały Ulicę Pokątną. Cecil Court to ulica antykwariatów i starych księgarń.",
-     "move": "pieszo ok. 5 min",
-     "line": "walk",
-     "q": "51.5107,-0.1272",
-     "r": true,
-     "dur": 15
-    },
-    {
-     "t": "17:40",
+     "t": "16:20",
      "kind": "xmas",
-     "title": "Leicester Square i Chinatown",
-     "note": "Jarmark i lodowisko na Leicester Square (10:00–22:00), lampiony w Chinatown.",
-     "move": "pieszo ok. 8 min",
+     "title": "Chinatown",
+     "note": "Czerwone lampiony nad Gerrard Street, chińskie bramy i piekarnie z bułeczkami bao.",
+     "move": "pieszo ok. 6 min",
+     "line": "walk",
+     "q": "51.5115,-0.1315",
+     "r": true,
+     "dur": 15,
+     "place": "Chinatown, London"
+    },
+    {
+     "t": "16:35",
+     "kind": "xmas",
+     "title": "M&M'S London Store",
+     "note": "Cztery piętra kolorowych cukierków na Leicester Square (1 Swiss Court): ściana z cukierkami na wagę, gadżety i świąteczne edycje. Otwarte do późna.",
+     "move": "pieszo ok. 4 min",
+     "line": "walk",
+     "q": "51.5106,-0.1310",
+     "r": true,
+     "dur": 25,
+     "place": "M&M'S London, Leicester Square"
+    },
+    {
+     "t": "17:00",
+     "kind": "xmas",
+     "title": "Leicester Square",
+     "note": "Świąteczny jarmark i lodowisko (10:00–22:00).",
+     "move": "pieszo ok. 2 min",
      "line": "walk",
      "q": "51.5105,-0.1301",
      "r": true,
-     "dur": 20
+     "dur": 15,
+     "place": "Leicester Square, London"
     },
     {
-     "t": "18:00",
-     "kind": "xmas",
-     "title": "House of MinaLima",
-     "note": "Galeria i sklep studia MinaLima, które zaprojektowało grafiki do filmów: list z Hogwartu, Mapę Huncwotów, Proroka Codziennego. 157 Wardour Street. Otwarte codziennie 11:00–18:45, wstęp wolny.",
-     "move": "pieszo ok. 8 min",
-     "line": "walk",
-     "q": "51.5149,-0.1352",
-     "r": true,
-     "dur": 45
-    },
-    {
-     "t": "18:45",
+     "t": "17:15",
      "kind": "xmas",
      "title": "Piccadilly Circus → Regent Street",
      "note": "Słynne iluminacje z aniołami nad Regent Street. Na Piccadilly Circus w „Insygniach Śmierci” Harry, Ron i Hermiona uciekają przed autobusem. Po drodze Hamleys, wielki sklep z zabawkami.",
-     "move": "pieszo ok. 12 min",
+     "move": "pieszo ok. 4 min",
      "line": "walk",
      "q": "51.5101,-0.1340",
      "r": true,
-     "dur": 30
+     "dur": 30,
+     "place": "Piccadilly Circus, London"
     },
     {
-     "t": "19:15",
+     "t": "17:45",
      "kind": "xmas",
      "title": "Carnaby Street i Liberty",
      "note": "Każdego roku inna instalacja świetlna nad Carnaby. Obok Liberty, sklep w budynku w stylu Tudorów.",
@@ -725,21 +762,35 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5132,-0.1389",
      "r": true,
      "img": "libertys",
-     "dur": 25
+     "dur": 25,
+     "place": "Carnaby Street, London"
     },
     {
-     "t": "19:40",
+     "t": "18:10",
+     "kind": "xmas",
+     "title": "House of MinaLima",
+     "note": "Galeria i sklep studia MinaLima, które zaprojektowało grafiki do filmów: list z Hogwartu, Mapę Huncwotów, Proroka Codziennego. 157 Wardour Street. Otwarte codziennie 11:00–18:45, wstęp wolny.",
+     "move": "pieszo ok. 5 min",
+     "line": "walk",
+     "q": "51.5149,-0.1352",
+     "r": true,
+     "dur": 40,
+     "place": "House of MinaLima, 157 Wardour St, London"
+    },
+    {
+     "t": "18:50",
      "kind": "xmas",
      "title": "Oxford Street",
      "note": "Iluminacje świąteczne i witryny wielkich domów towarowych.",
-     "move": "pieszo ok. 5 min",
+     "move": "pieszo ok. 4 min",
      "line": "walk",
      "q": "51.5158,-0.1367",
      "r": true,
-     "dur": 10
+     "dur": 10,
+     "place": "Oxford Street, London"
     },
     {
-     "t": "19:50",
+     "t": "19:00",
      "kind": "xmas",
      "title": "Harry Potter Shop na Oxford Street",
      "note": "Nowy, największy oficjalny sklep Harry'ego Pottera w Wielkiej Brytanii (The Ribbon, 134–140 Oxford Street, otwarty od 4.11.2026). Dwa piętra w stylu Ulicy Pokątnej, Błędny Rycerz w naturalnej wielkości, smok i bar w stylu Dziurawego Kotła z kremowym piwem. Świeżo otwarty, więc może być kolejka.",
@@ -747,10 +798,11 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "walk",
      "q": "51.516,-0.13715",
      "r": true,
-     "dur": 55
+     "dur": 55,
+     "place": "Harry Potter Shop, 134-140 Oxford Street, London"
     },
     {
-     "t": "20:45",
+     "t": "19:55",
      "kind": "food",
      "title": "Kolacja w Soho",
      "note": "",
@@ -761,7 +813,7 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "dur": 75
     },
     {
-     "t": "22:00",
+     "t": "21:10",
      "kind": "home",
      "title": "Tottenham Court Road → Stockwell",
      "note": "Northern line, odgałęzienie Charing Cross, bez przesiadek.",
@@ -769,7 +821,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "northern",
      "q": "51.4733,-0.1222",
      "r": false,
-     "dur": 30
+     "dur": 30,
+     "place": "Tottenham Court Road Station, London"
     }
    ],
    "mymap": "https://www.google.com/maps/d/u/0/edit?mid=1V1ZfgRBc1_MeVU2QZN5w-df4ctZk1iM&usp=sharing"
@@ -791,7 +844,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "northern",
      "q": "51.5043,-0.0848",
      "r": false,
-     "dur": 25
+     "dur": 25,
+     "place": "London Bridge Station"
     },
     {
      "t": "09:10",
@@ -803,7 +857,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5055,-0.0754",
      "r": true,
      "img": "towerbridge",
-     "dur": 60
+     "dur": 60,
+     "place": "Tower Bridge, London"
     },
     {
      "t": "10:10",
@@ -815,7 +870,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5056,-0.0905",
      "r": true,
      "img": "borough",
-     "dur": 65
+     "dur": 65,
+     "place": "Borough Market, London"
     },
     {
      "t": "11:15",
@@ -826,7 +882,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "walk",
      "q": "51.5095,-0.0985",
      "r": true,
-     "dur": 25
+     "dur": 25,
+     "place": "Millennium Bridge, London"
     },
     {
      "t": "11:40",
@@ -838,7 +895,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5138,-0.0984",
      "r": true,
      "img": "stpauls",
-     "dur": 30
+     "dur": 30,
+     "place": "St Paul's Cathedral, London"
     },
     {
      "t": "12:10",
@@ -849,7 +907,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "northern",
      "q": "51.5282,-0.1337",
      "r": false,
-     "dur": 40
+     "dur": 40,
+     "place": "London Euston Station"
     },
     {
      "t": "12:50",
@@ -860,7 +919,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "rail",
      "q": "51.6637,-0.3966",
      "r": false,
-     "dur": 30
+     "dur": 30,
+     "place": "Watford Junction Station"
     },
     {
      "t": "13:20",
@@ -871,7 +931,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "shuttle",
      "q": "51.6633,-0.3966",
      "r": false,
-     "dur": 25
+     "dur": 25,
+     "place": "Watford Junction Station"
     },
     {
      "t": "13:45",
@@ -883,7 +944,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.6903,-0.4182",
      "r": false,
      "img": "wbstudio",
-     "dur": 45
+     "dur": 45,
+     "place": "Warner Bros. Studio Tour London - The Making of Harry Potter"
     },
     {
      "t": "14:30",
@@ -896,7 +958,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "r": false,
      "img": "wbstudio",
      "lock": true,
-     "dur": 225
+     "dur": 225,
+     "place": "Warner Bros. Studio Tour London - The Making of Harry Potter"
     },
     {
      "t": "18:15",
@@ -907,7 +970,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "rail",
      "q": "51.5282,-0.1337",
      "r": false,
-     "dur": 60
+     "dur": 60,
+     "place": "London Euston Station"
     },
     {
      "t": "19:15",
@@ -918,7 +982,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "walk",
      "q": "51.5322,-0.1240",
      "r": true,
-     "dur": 30
+     "dur": 30,
+     "place": "Platform 9 3/4, King's Cross Station, London"
     },
     {
      "t": "19:45",
@@ -929,7 +994,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "walk",
      "q": "51.5362,-0.1255",
      "r": true,
-     "dur": 105
+     "dur": 105,
+     "place": "Dishoom King's Cross, London"
     },
     {
      "t": "21:30",
@@ -940,9 +1006,11 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "victoria",
      "q": "51.4733,-0.1222",
      "r": false,
-     "dur": 30
+     "dur": 30,
+     "place": "King's Cross St Pancras Station"
     }
-   ]
+   ],
+   "mymap": "https://www.google.com/maps/d/u/0/edit?mid=1uNiLRY_v8fy9MyJRldBGyyb85kv3yzY&usp=sharing"
   },
   {
    "id": "d25",
@@ -961,7 +1029,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "central",
      "q": "51.5091,-0.1966",
      "r": false,
-     "dur": 40
+     "dur": 40,
+     "place": "Notting Hill Gate Station, London"
     },
     {
      "t": "09:40",
@@ -973,7 +1042,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5155,-0.2050",
      "r": true,
      "img": "portobello",
-     "dur": 80
+     "dur": 80,
+     "place": "Portobello Road Market, London"
     },
     {
      "t": "11:00",
@@ -985,7 +1055,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5058,-0.1877",
      "r": true,
      "img": "kensington",
-     "dur": 60
+     "dur": 60,
+     "place": "Kensington Palace, London"
     },
     {
      "t": "12:00",
@@ -996,7 +1067,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "walk",
      "q": "51.4967,-0.1764",
      "r": true,
-     "dur": 150
+     "dur": 150,
+     "place": "Natural History Museum, London"
     },
     {
      "t": "14:30",
@@ -1008,7 +1080,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.4994,-0.1632",
      "r": true,
      "img": "harrods",
-     "dur": 105
+     "dur": 105,
+     "place": "Harrods, London"
     },
     {
      "t": "16:15",
@@ -1019,7 +1092,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "walk",
      "q": "51.5082,-0.1583",
      "r": true,
-     "dur": 225
+     "dur": 225,
+     "place": "Hyde Park Winter Wonderland, London"
     },
     {
      "t": "20:00",
@@ -1030,7 +1104,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "piccadilly",
      "q": "51.4733,-0.1222",
      "r": false,
-     "dur": 30
+     "dur": 30,
+     "place": "Hyde Park Corner Station, London"
     }
    ]
   },
@@ -1051,7 +1126,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "",
      "q": "51.4733,-0.1222",
      "r": false,
-     "dur": 15
+     "dur": 15,
+     "place": "346A South Lambeth Rd, London SW8 1UQ"
     },
     {
      "t": "09:45",
@@ -1062,7 +1138,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "victoria",
      "q": "51.4965,-0.1447",
      "r": false,
-     "dur": 20
+     "dur": 20,
+     "place": "London Victoria Station"
     },
     {
      "t": "10:05",
@@ -1073,7 +1150,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "walk",
      "q": "51.4962,-0.1422",
      "r": false,
-     "dur": 15
+     "dur": 15,
+     "place": "Bounce Luggage Storage, 330A Vauxhall Bridge Rd, London SW1V 1AA"
     },
     {
      "t": "10:20",
@@ -1084,7 +1162,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "victoria",
      "q": "51.5247,-0.1384",
      "r": false,
-     "dur": 25
+     "dur": 25,
+     "place": "Warren Street Station, London"
     },
     {
      "t": "10:45",
@@ -1096,7 +1175,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5194,-0.1270",
      "r": false,
      "img": "britishmuseum",
-     "dur": 120
+     "dur": 120,
+     "place": "British Museum, London"
     },
     {
      "t": "12:45",
@@ -1118,7 +1198,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "victoria",
      "q": "51.4965,-0.1447",
      "r": false,
-     "dur": 35
+     "dur": 35,
+     "place": "London Victoria Station"
     },
     {
      "t": "14:05",
@@ -1129,7 +1210,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "walk",
      "q": "51.4962,-0.1422",
      "r": false,
-     "dur": 45
+     "dur": 45,
+     "place": "Bounce Luggage Storage, 330A Vauxhall Bridge Rd, London SW1V 1AA"
     },
     {
      "t": "14:50",
@@ -1141,7 +1223,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.4931,-0.1466",
      "r": false,
      "lock": true,
-     "dur": 85
+     "dur": 85,
+     "place": "Victoria Green Line Coach Station, Bulleid Way, London"
     },
     {
      "t": "16:15",
@@ -1152,7 +1235,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "line": "bus",
      "q": "51.8763,-0.3717",
      "r": false,
-     "dur": 170
+     "dur": 170,
+     "place": "London Luton Airport"
     },
     {
      "t": "19:05",
@@ -1240,73 +1324,85 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
    "title": "Sky Garden",
    "note": "Darmowy ogród widokowy na 35. piętrze. Wejściówki trzeba rezerwować online, ok. 3 tygodnie wcześniej.",
    "q": "51.5112,-0.0835",
-   "img": "skygarden"
+   "img": "skygarden",
+   "place": "Sky Garden, London"
   },
   {
    "title": "Tower of London",
    "note": "Klejnoty Koronne. Bilety online. Najlepiej rano.",
    "q": "51.5081,-0.0759",
-   "img": "tower"
+   "img": "tower",
+   "place": "Tower of London"
   },
   {
    "title": "Greenwich",
    "note": "Statkiem Uber Boat z Westminster lub Tower Pier. Cutty Sark, obserwatorium, lodowisko przy Queen's House (od 18.11).",
    "q": "51.4834,-0.0098",
-   "img": "greenwich"
+   "img": "greenwich",
+   "place": "Cutty Sark, Greenwich"
   },
   {
    "title": "Camden Market",
    "note": "Alternatywny klimat, targ z jedzeniem z całego świata i stragany nad kanałem.",
    "q": "51.5414,-0.1465",
-   "img": "camden"
+   "img": "camden",
+   "place": "Camden Market, London"
   },
   {
    "title": "Christmas at Kew",
    "note": "Świetlny szlak w Ogrodach Kew (od 13.11). Wieczorem, bilety z wyprzedzeniem.",
    "q": "51.4787,-0.2956",
-   "img": "kew"
+   "img": "kew",
+   "place": "Kew Gardens, London"
   },
   {
    "title": "Primrose Hill",
    "note": "Wzgórze z jedną z najpiękniejszych darmowych panoram Londynu, 10 min od Camden.",
    "q": "51.5398,-0.1608",
-   "img": "primrose"
+   "img": "primrose",
+   "place": "Primrose Hill, London"
   },
   {
    "title": "Somerset House: lodowisko",
    "note": "Lodowisko na dziedzińcu pałacu (od 11.11), blisko Covent Garden.",
    "q": "51.5110,-0.1172",
-   "img": "somerset"
+   "img": "somerset",
+   "place": "Somerset House, London"
   },
   {
    "title": "Sherlock Holmes Museum",
    "note": "Baker Street 221B.",
    "q": "51.5238,-0.1586",
-   "img": "sherlock"
+   "img": "sherlock",
+   "place": "Sherlock Holmes Museum, London"
   },
   {
    "title": "Harry Potter i Przeklęte Dziecko",
    "note": "Spektakl w Palace Theatre przy Cambridge Circus, słynny z efektów scenicznych. Wieczorny spektakl, bilety z dużym wyprzedzeniem.",
    "q": "51.5134,-0.1291",
-   "img": "cursedchild"
+   "img": "cursedchild",
+   "place": "Palace Theatre, London"
   },
   {
    "title": "Australia House (Bank Gringotta)",
    "note": "Przy Strand. Wnętrza zagrały Bank Gringotta. Do środka nie można wejść, ale fasadę warto zobaczyć w drodze do Somerset House.",
    "q": "51.5128,-0.1166",
-   "img": "australiahouse"
+   "img": "australiahouse",
+   "place": "Australia House, Strand, London"
   },
   {
    "title": "Claremont Square (Grimmauld Place 12)",
    "note": "Kamienice w Islington, które zagrały dom Syriusza Blacka. 10 min pieszo od King's Cross.",
    "q": "51.5313,-0.1102",
-   "img": "claremont"
+   "img": "claremont",
+   "place": "Claremont Square, London"
   },
   {
    "title": "Lambeth Bridge",
    "note": "Tu Błędny Rycerz przeciska się między dwoma piętrowymi autobusami w „Więźniu Azkabanu”. Blisko Westminster.",
    "q": "51.4945,-0.1236",
-   "img": "lambeth"
+   "img": "lambeth",
+   "place": "Lambeth Bridge, London"
   }
  ],
  "tips": [
@@ -1612,7 +1708,7 @@ function dayHTML(D){
   if(isToday){d.events.forEach(function(e,i){var m=toMin(e.t);if(m!=null&&m<=nowM) nowIdx=i;});}
   var routes=routeUrls(d.events);
   var head='<div class="dayhead"><div class="date">'+esc(d.dow)+' · '+plDate(d.date)+'</div><h3>'+esc(d.title)+'</h3><p>'+esc(d.summary)+'</p>'+
-    ((routes.length||d.mymap)?'<div class="routes">'+(d.mymap?'<a class="btn primary" href="'+esc(d.mymap)+'" target="_blank" rel="noopener">'+svg('pin')+'Nasza mapa dnia</a>':'')+routes.map(function(u,i){return '<a class="btn" href="'+esc(u)+'" target="_blank" rel="noopener">'+svg('route')+'Trasa piesza w Google Maps'+(routes.length>1?' ('+(i+1)+'/'+routes.length+')':'')+'</a>';}).join('')+'</div>':'')+
+    ((routes.length||d.mymap||D.trip.foodmap)?'<div class="routes">'+(d.mymap?'<a class="btn primary" href="'+esc(d.mymap)+'" target="_blank" rel="noopener">'+svg('pin')+'Nasza mapa dnia</a>':'')+(D.trip.foodmap?'<a class="btn gold" href="'+esc(D.trip.foodmap)+'" target="_blank" rel="noopener">'+svg('food')+'Mapa jedzenia</a>':'')+routes.map(function(u,i){return '<a class="btn" href="'+esc(u)+'" target="_blank" rel="noopener">'+svg('route')+'Trasa piesza w Google Maps'+(routes.length>1?' ('+(i+1)+'/'+routes.length+')':'')+'</a>';}).join('')+'</div>':'')+
   '</div>';
   var tl='<ol class="tl">'+d.events.map(function(e,i){
     var P=e.img&&photos[e.img], pid='ph-'+d.id+'-'+i;
@@ -1621,7 +1717,7 @@ function dayHTML(D){
       (e.move?'<div class="move">'+chip(e.line,e.move)+'</div>':'')+
       (P?'<div class="title has-ph" data-ph="'+pid+'">'+esc(e.title)+'</div>':'<div class="title">'+esc(e.title)+'</div>')+
       (e.note?'<p class="note">'+esc(e.note)+'</p>':'')+
-      ((e.q||P)?'<div class="meta">'+(P?'<button class="ph" data-ph="'+pid+'" aria-expanded="false">'+svg('camera')+'Zdjęcie</button>':'')+(e.q?'<a class="map" href="'+esc(mapUrl(e.q))+'" target="_blank" rel="noopener">'+svg('pin')+'Pokaż na mapie</a>':'')+'</div>':'')+
+      ((e.q||P)?'<div class="meta">'+(P?'<button class="ph" data-ph="'+pid+'" aria-expanded="false">'+svg('camera')+'Zdjęcie</button>':'')+(e.q?'<a class="map" href="'+esc(mapUrl(e.place||e.q))+'" target="_blank" rel="noopener">'+svg('pin')+'Pokaż na mapie</a>':'')+'</div>':'')+
       (P?'<figure class="photo" id="'+pid+'" data-img="'+esc(e.img)+'" hidden><img alt="'+esc(e.title)+'"><figcaption>Zdjęcie: <a href="'+esc(P.link)+'" target="_blank" rel="noopener">'+esc(P.credit)+' (autor i licencja)</a></figcaption></figure>':'')+
     '</div></li>';
   }).join('')+'</ol>';
@@ -1653,7 +1749,7 @@ function listHTML(D,k){
 }
 function extrasHTML(D){
   return '<section id="dodatkowe"><div class="wrap"><div class="sec-h"><h2>Jeśli starczy czasu</h2></div><div class="extras">'+
-   D.extras.map(function(x){var P=x.img&&photos[x.img];return '<div class="card">'+(P?'<div class="thumb"><img loading="lazy" src="'+P.src+'" alt="'+esc(x.title)+'"></div>':'')+'<h3>'+esc(x.title)+'</h3><p>'+esc(x.note)+'</p>'+(x.q?'<a class="map" href="'+esc(mapUrl(x.q))+'" target="_blank" rel="noopener">'+svg('pin')+'Pokaż na mapie</a>':'')+(P?'<a class="credit" href="'+esc(P.link)+'" target="_blank" rel="noopener">Zdjęcie: '+esc(P.credit)+'</a>':'')+'</div>';}).join('')+
+   D.extras.map(function(x){var P=x.img&&photos[x.img];return '<div class="card">'+(P?'<div class="thumb"><img loading="lazy" src="'+P.src+'" alt="'+esc(x.title)+'"></div>':'')+'<h3>'+esc(x.title)+'</h3><p>'+esc(x.note)+'</p>'+(x.q?'<a class="map" href="'+esc(mapUrl(x.place||x.q))+'" target="_blank" rel="noopener">'+svg('pin')+'Pokaż na mapie</a>':'')+(P?'<a class="credit" href="'+esc(P.link)+'" target="_blank" rel="noopener">Zdjęcie: '+esc(P.credit)+'</a>':'')+'</div>';}).join('')+
   '</div></div></section>';
 }
 function tipsHTML(D){
@@ -1679,7 +1775,7 @@ function editHTML(D){
     return '<div class="edev"><div class="edrow">'+f(q+'.t',e.t,'Godzina')+f(q+'.title',e.title,'Co')+'</div>'+
       f(q+'.note',e.note,'Opis','area')+
       '<div class="edrow3">'+f(q+'.move',e.move,'Dojazd (np. pieszo 8 min)')+'<div class="ed"><label>Środek transportu</label><select data-p="'+q+'.line"><option value="">brak</option>'+opt(LINES,e.line)+'</select></div></div>'+
-      '<div class="edrow3">'+f(q+'.q',e.q,'Miejsce na mapie (współrzędne lub nazwa)')+'<div class="ed"><label>Ikona</label><select data-p="'+q+'.kind">'+opt(KINDS,e.kind)+'</select></div></div>'+
+      '<div class="edrow3">'+f(q+'.place',e.place||'','Miejsce w Google Maps (nazwa lub adres)')+f(q+'.q',e.q,'Współrzędne (do trasy pieszej)')+'<div class="ed"><label>Ikona</label><select data-p="'+q+'.kind">'+opt(KINDS,e.kind)+'</select></div></div>'+
       '<div class="ed"><label>Zdjęcie</label><select data-p="'+q+'.img"><option value="">brak</option>'+photoOpts(e.img)+'</select></div>'+
       '<div class="edtools"><label style="display:flex;gap:6px;align-items:center;font-size:14px"><input type="checkbox" data-p="'+q+'.r"'+(e.r?' checked':'')+'> w trasie pieszej</label><span class="sp"></span>'+
       '<button class="mini" data-act="up" data-p="'+p+'.events" data-i="'+i+'">↑</button><button class="mini" data-act="down" data-p="'+p+'.events" data-i="'+i+'">↓</button><button class="mini del" data-act="del" data-p="'+p+'.events" data-i="'+i+'">Usuń</button></div></div>';
@@ -1694,14 +1790,14 @@ function editHTML(D){
     '<button class="btn" data-act="add" data-p="info">+ Dodaj kartę</button></div></section>';
   var list='<section id="lista"><div class="wrap"><div class="sec-h"><h2>Checklista</h2></div><div class="ed"><label>Jedna linia = jeden punkt</label><textarea data-p="checklist" data-lines="1" style="min-height:260px">'+esc(D.checklist.join('\n'))+'</textarea></div></div></section>';
   var ex='<section id="dodatkowe"><div class="wrap"><div class="sec-h"><h2>Jeśli starczy czasu</h2></div>'+D.extras.map(function(x,i){
-    return '<div class="edev">'+f('extras.'+i+'.title',x.title,'Miejsce')+f('extras.'+i+'.note',x.note,'Opis','area')+f('extras.'+i+'.q',x.q,'Mapa (współrzędne lub nazwa)')+'<div class="ed"><label>Zdjęcie</label><select data-p="extras.'+i+'.img"><option value="">brak</option>'+photoOpts(x.img)+'</select></div>'+
+    return '<div class="edev">'+f('extras.'+i+'.title',x.title,'Miejsce')+f('extras.'+i+'.note',x.note,'Opis','area')+f('extras.'+i+'.place',x.place||'','Miejsce w Google Maps (nazwa lub adres)')+f('extras.'+i+'.q',x.q,'Współrzędne')+'<div class="ed"><label>Zdjęcie</label><select data-p="extras.'+i+'.img"><option value="">brak</option>'+photoOpts(x.img)+'</select></div>'+
     '<div class="edtools"><span class="sp"></span><button class="mini del" data-act="del" data-p="extras" data-i="'+i+'">Usuń</button></div></div>';}).join('')+
     '<button class="btn" data-act="add" data-p="extras">+ Dodaj miejsce</button></div></section>';
   var tips='<section id="porady"><div class="wrap"><div class="sec-h"><h2>Porady</h2></div>'+D.tips.map(function(t,i){
     return '<div class="edev">'+f('tips.'+i+'.title',t.title,'Nagłówek')+f('tips.'+i+'.text',t.text,'Treść','area')+
     '<div class="edtools"><span class="sp"></span><button class="mini del" data-act="del" data-p="tips" data-i="'+i+'">Usuń</button></div></div>';}).join('')+
     '<button class="btn" data-act="add" data-p="tips">+ Dodaj poradę</button></div></section>';
-  var intro='<section><div class="wrap">'+f('trip.intro',D.trip.intro,'Wstęp na górze strony','area')+'</div></section>';
+  var intro='<section><div class="wrap">'+f('trip.intro',D.trip.intro,'Wstęp na górze strony','area')+f('trip.foodmap',D.trip.foodmap||'','Link do mapy jedzenia (widoczny przy każdym dniu)')+'</div></section>';
   var food='<section><div class="wrap"><div class="sec-h"><h2>Do spróbowania</h2></div><div class="ed"><label>Jedna linia = jedno danie (nazwa — opis)</label><textarea data-p="food" data-lines="1" style="min-height:260px">'+esc((D.food||[]).join('\n'))+'</textarea></div></div></section>';
   return intro+plan+info+list+food+ex+tips+'<div style="height:140px"></div>';
 }
@@ -1751,6 +1847,15 @@ function resolve(day){
     if(s<prevEnd){ if(ev[i].lock) ev[i].clash=true; else ev[i].t=fmt(prevEnd); }
   }
   if(ev[0]) ev[0].clash=false;
+}
+function ripple(day,from){
+  // pull every following, unpinned event up so it starts exactly where the previous one ends
+  var ev=day.events;
+  for(var i=Math.max(1,from);i<ev.length;i++){
+    var prevEnd=toMin(ev[i-1].t)+ev[i-1].dur;
+    if(ev[i].lock){ev[i].clash=toMin(ev[i].t)<prevEnd;continue;}
+    ev[i].clash=false; ev[i].t=fmt(prevEnd);
+  }
 }
 function compact(day){
   var ev=day.events;
@@ -1839,6 +1944,7 @@ function plEnd(){
     } else e.t=fmt(P.ns);
   }
   resolve(d);
+  ripple(d,Math.max(1,d.events.indexOf(e)+1));
   if(d.events.some(function(x){return x.clash;})) plMsg='Uwaga: punkt nachodzi na przypiętą godzinę (zaznaczony na czerwono). Skróć coś wcześniej albo odepnij godzinę.';
   render();
 }
@@ -2177,9 +2283,10 @@ app.addEventListener('click',function(ev){
   if(act==='copy'){copyData();return;}
   var arr=p?getP(draft,p):null; if(!arr) return;
   var y=window.scrollY;
-  if(act==='up'&&i>0){arr.splice(i-1,0,arr.splice(i,1)[0]);}
-  else if(act==='down'&&i<arr.length-1){arr.splice(i+1,0,arr.splice(i,1)[0]);}
-  else if(act==='del'){arr.splice(i,1);}
+  var dmv=/^days\.(\d+)\.events$/.exec(p||''), dday=dmv?draft.days[+dmv[1]]:null;
+  if(act==='up'&&i>0){if(dday){ensureDur(dday);var st=dday.events[i-1].t;arr.splice(i-1,0,arr.splice(i,1)[0]);if(!arr[i-1].lock)arr[i-1].t=st;ripple(dday,i);}else arr.splice(i-1,0,arr.splice(i,1)[0]);}
+  else if(act==='down'&&i<arr.length-1){if(dday){ensureDur(dday);var st2=dday.events[i].t;arr.splice(i+1,0,arr.splice(i,1)[0]);if(!arr[i].lock)arr[i].t=st2;ripple(dday,i+1);}else arr.splice(i+1,0,arr.splice(i,1)[0]);}
+  else if(act==='del'){arr.splice(i,1); var dm=/^days\.(\d+)\.events$/.exec(p); if(dm){var dd=draft.days[+dm[1]];ensureDur(dd);ripple(dd,i);}}
   else if(act==='sort'){arr.sort(function(a,b){return (toMin(a.t)||0)-(toMin(b.t)||0);});}
   else if(act==='add'){
     if(p==='info') arr.push({title:'Nowa karta',lines:['']});
