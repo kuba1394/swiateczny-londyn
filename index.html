@@ -2202,7 +2202,7 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "q": "51.5194,-0.1270",
      "r": false,
      "img": "britishmuseum",
-     "dur": 120,
+     "dur": 165,
      "place": "British Museum, London",
      "pins": [
       {
@@ -2211,17 +2211,6 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
        "place": "British Museum, London"
       }
      ]
-    },
-    {
-     "t": "12:45",
-     "kind": "food",
-     "title": "Ostatni lunch w Bloomsbury",
-     "note": "",
-     "move": "",
-     "line": "",
-     "q": "",
-     "r": false,
-     "dur": 45
     },
     {
      "t": "13:30",
@@ -2264,13 +2253,26 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      "t": "16:15",
      "kind": "plane",
      "title": "Lotnisko Luton: kontrola bezpieczeństwa",
-     "note": "Ok. 2,5–3 h przed odlotem, z zapasem na kolejki.",
+     "note": "Ok. 2,5–3 h przed odlotem, z zapasem na kolejki. Po kontroli kierujemy się do Lounge.",
      "move": "Green Line 757 · ok. 70–90 min",
      "line": "bus",
      "q": "51.8763,-0.3717",
      "r": false,
-     "dur": 170,
+     "dur": 30,
      "place": "London Luton Airport"
+    },
+    {
+     "t": "16:45",
+     "kind": "food",
+     "title": "Lounge: obiad i czekanie na lot",
+     "note": "Po kontroli bezpieczeństwa idziemy do Lounge (na Luton są No1 Lounge przy bramce 17 i My Lounge obok Accessorize, oba z ciepłym bufetem). Tu jemy obiad i odpoczywamy przed lotem. Wychodzimy ok. 18:20, bo bramka Wizz Air zamyka się 30 min przed odlotem. Numer bramki sprawdzamy na tablicach albo w aplikacji Wizz.",
+     "move": "",
+     "line": "",
+     "q": "51.8763,-0.3717",
+     "r": false,
+     "dur": 95,
+     "place": "London Luton Airport",
+     "pins": []
     },
     {
      "t": "19:05",
@@ -2373,7 +2375,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
    "note": "Statkiem Uber Boat z Westminster lub Tower Pier. Cutty Sark, obserwatorium, lodowisko przy Queen's House (od 18.11).",
    "q": "51.4834,-0.0098",
    "img": "greenwich",
-   "place": "Cutty Sark, Greenwich"
+   "place": "Cutty Sark, Greenwich",
+   "nomap": true
   },
   {
    "title": "Camden Market i Camden Town",
@@ -2389,7 +2392,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
    "q": "51.4787,-0.2956",
    "img": "kew",
    "place": "Kew Gardens, London",
-   "pin": "Kew Gardens"
+   "pin": "Kew Gardens",
+   "nomap": true
   },
   {
    "title": "Primrose Hill",
@@ -2476,7 +2480,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
    "note": "Ogromny park z dzikimi jeleniami, ok. 40 min od centrum. Wycieczka na pół dnia.",
    "q": "51.4412,-0.2745",
    "place": "Richmond Park, London",
-   "img": "richmondpark"
+   "img": "richmondpark",
+   "nomap": true
   },
   {
    "title": "Science Museum",
@@ -2842,7 +2847,7 @@ function placesFrom(D){
     });
   });
   (D.extras||[]).forEach(function(x){
-    if(!x.q||!/^-?\d+(\.\d+)?,-?\d+(\.\d+)?$/.test(x.q)) return;
+    if(x.nomap||!x.q||!/^-?\d+(\.\d+)?,-?\d+(\.\d+)?$/.test(x.q)) return;
     var nm=x.pin||x.title, key=nm.toLowerCase(); if(by[key]) return;
     var p=x.q.split(',').map(Number);
     var o={key:key,name:nm,full:nm,lat:p[0],lng:p[1],day:-1,dow:'Dodatkowe (jeśli starczy czasu)',when:[],place:x.place||x.q,note:x.note||''};
