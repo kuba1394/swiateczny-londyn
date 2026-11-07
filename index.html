@@ -3292,9 +3292,9 @@ function weatherHTML(D){
   if(WX.state==='loading') return head+'<div class="wx-card wx-wait">Sprawdzam pogodę w Londynie…</div></div></section>';
   if(WX.state==='error') return head+'<div class="wx-card wx-wait">Nie udało się teraz pobrać pogody. Aktualną prognozę zobaczysz na <a href="https://www.bbc.com/weather/2643743" target="_blank" rel="noopener">BBC Weather</a>.</div></div></section>';
   var w=WX.data, c=w.current, dd=w.daily, trip=D.days.map(function(x){return x.date;});
-  var idx=[];dd.time.forEach(function(t,i){if(trip.indexOf(t)>=0)idx.push(i);});
+  var idx=[];dd.time.forEach(function(t,i){if(trip.indexOf(t)>=0&&dd.temperature_2m_max[i]!=null&&dd.temperature_2m_min[i]!=null)idx.push(i);});
   var tripMode=idx.length>0, list=tripMode?idx:dd.time.slice(0,6).map(function(_,i){return i;});
-  var avail=new Date(Date.parse(trip[0])-15*864e5), when=avail.getUTCDate()+' listopada';
+  var avail=new Date(Date.parse(trip[0])-14*864e5), when=avail.getUTCDate()+' listopada';
   var days=list.map(function(i){var dt=new Date(dd.time[i]+'T12:00:00Z');
     return '<div class="wx-day"><div class="wx-dn">'+DOWS[dt.getUTCDay()]+' '+dt.getUTCDate()+'.'+(dt.getUTCMonth()+1)+'</div>'+wxIcon(wxKind(dd.weather_code[i]))+
       '<div class="wx-t"><b>'+Math.round(dd.temperature_2m_max[i])+'°</b> <span>'+Math.round(dd.temperature_2m_min[i])+'°</span></div>'+
