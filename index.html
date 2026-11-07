@@ -856,6 +856,9 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .qz-end{text-align:center;display:grid;gap:8px;justify-items:center}
 .qz-end .routes{justify-content:center}
 .qz-lab{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--hero-gold)}
+.qz-grade{font-family:var(--f-display);font-size:96px;line-height:1;width:130px;height:130px;display:grid;place-items:center;border-radius:50%;border:3px solid var(--hero-gold);color:var(--hero-gold);background:rgba(231,193,95,.08)}
+.qz-grade.fail{border-color:#9DB0A7;color:#9DB0A7;background:rgba(157,176,167,.06)}
+.qz-gname{font-size:20px;font-weight:800}
 .qz-score{font-family:var(--f-display);font-size:72px;line-height:1}
 .qz-score span{font-size:32px;color:var(--muted)}
 .qz-end p{margin:0;font-size:17px}
@@ -3971,7 +3974,7 @@ document.addEventListener('click',function(ev){
   }
 });
 
-var TABS=[['plan','Przewodnik'],['mapa','Mapa'],['pogoda','Pogoda'],['jedzenie','Do spróbowania'],['dodatkowe','Jeśli starczy czasu'],['lista','Checklista'],['ciekawostki','Ciekawostki'],['quiz','Quiz'],['bingo','Bingo'],['logistyka','Informacje'],['porady','Porady']];
+var TABS=[['plan','Przewodnik'],['mapa','Mapa'],['pogoda','Pogoda'],['jedzenie','Do spróbowania'],['dodatkowe','Jeśli starczy czasu'],['lista','Checklista'],['ciekawostki','Ciekawostki'],['quiz','SUM-y'],['bingo','Bingo'],['logistyka','Informacje'],['porady','Porady']];
 var tab='plan';
 function tabFromHash(){
   var h=(location.hash||'').slice(1);
@@ -4107,11 +4110,11 @@ function quizStart(){var Q=data.quiz||[];QZ={order:shuf(Q.map(function(_,i){retu
 function quizOpts(){var q=data.quiz[QZ.order[QZ.pos]];QZ.opts=shuf([q.a].concat(q.w));QZ.picked=null;}
 function quizHTML(D){
   var Q=D.quiz||[], best=+(ls('londyn-quiz-best')||0);
-  var head='<section id="quiz"><div class="wrap"><div class="sec-h"><h2>Quiz</h2><span class="progress">'+(best?'Najlepszy wynik: '+best+'/10':Q.length+' pytań w puli')+'</span></div>';
-  if(!QZ) return head+'<div class="qz-card"><p class="qz-lead">Sprawdź, ile pamiętasz z zakładki Ciekawostki. Każda runda to 10 losowych pytań z '+Q.length+', więc za każdym razem quiz jest trochę inny.</p><button class="btn red" data-qz="start">Zaczynamy!</button></div></div></section>';
+  var head='<section id="quiz"><div class="wrap"><div class="sec-h"><h2>SUM-y</h2><span class="progress">'+(best?'Najlepszy wynik: '+best+'/10':Q.length+' pytań w puli')+'</span></div>';
+  if(!QZ) return head+'<div class="qz-card"><p class="qz-lead"><b>Standardowe Umiejętności Magiczne</b>, czyli egzamin z wiedzy o Londynie. Sprawdź, ile pamiętasz z zakładki Ciekawostki. Każda runda to 10 losowych pytań z '+Q.length+', więc za każdym razem quiz jest trochę inny.</p><button class="btn red" data-qz="start">Zaczynamy!</button></div></div></section>';
   if(QZ.pos>=QZ.order.length){
-    var s=QZ.score, msg=s===10?'Wybitny! Godna Hermiony.':s>=8?'Powyżej oczekiwań! Londyn czeka.':s>=5?'Zadowalający. Jeszcze kilka ciekawostek i będzie Wybitny.':'Okropny? Nic straconego, ciekawostki czekają w swojej zakładce.';
-    return head+'<div class="qz-card qz-end"><div class="qz-lab">Twój wynik</div><div class="qz-score">'+s+'<span>/10</span></div><p>'+msg+'</p><div class="routes"><button class="btn red" data-qz="start">Zagraj jeszcze raz</button><a class="btn" href="#ciekawostki" data-tab="ciekawostki">Poczytaj ciekawostki</a></div></div></div></section>';
+    var s=QZ.score, G=s===10?['W','Wybitny','Godna Hermiony! Londyn nie ma przed Tobą tajemnic.',1]:s>=8?['P','Powyżej oczekiwań','Świetnie! Londyn czeka.',1]:s>=6?['Z','Zadowalający','Zdane! Jeszcze kilka ciekawostek i będzie Wybitny.',1]:s>=4?['N','Nędzny','Niezdane, ale poprawka zawsze jest możliwa.',0]:s>=2?['O','Okropny','Nic straconego, ciekawostki czekają w swojej zakładce.',0]:['T','Troll','Nawet Ron miał gorsze dni. Spróbuj jeszcze raz!',0];
+    return head+'<div class="qz-card qz-end"><div class="qz-lab">Wynik egzaminu SUM</div><div class="qz-grade'+(G[3]?' pass':' fail')+'">'+G[0]+'</div><div class="qz-gname">'+G[1]+' · '+s+'/10</div><p>'+G[2]+'</p><div class="routes"><button class="btn red" data-qz="start">Zagraj jeszcze raz</button><a class="btn" href="#ciekawostki" data-tab="ciekawostki">Poczytaj ciekawostki</a></div></div></div></section>';
   }
   var q=Q[QZ.order[QZ.pos]], done=QZ.picked!==null;
   return head+'<div class="qz-card"><div class="qz-top"><span>Pytanie '+(QZ.pos+1)+' z '+QZ.order.length+'</span><span>Punkty: '+QZ.score+'</span></div>'+
