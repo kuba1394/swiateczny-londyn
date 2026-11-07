@@ -828,7 +828,15 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .fact h3{font-family:var(--f-display);font-weight:400;font-size:20px;color:var(--ink);letter-spacing:0;margin-bottom:6px}
 .fact p{color:var(--muted)}
 .fact-cat{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--hero-gold);margin-bottom:6px}
-.fact-rand{display:grid;gap:12px;margin:0 0 18px;justify-items:start}
+.fact-rand{display:grid;gap:14px;margin:4px 0 34px;justify-items:center}
+.fact-rand .btn{font-size:16px;padding:10px 20px}
+.fact-all{font-size:clamp(22px,5vw,28px);margin:0 0 12px;padding-top:22px;border-top:1px solid var(--line)}
+.fact-big{padding:22px 20px;min-height:180px}
+.fact-big h3{font-size:clamp(22px,5vw,27px)!important}
+.fact-big p{font-size:17px!important;line-height:1.6}
+.fact-big.fresh{animation:fresh .45s ease-out}
+@keyframes fresh{from{opacity:0;transform:translateY(8px)}}
+@media (prefers-reduced-motion: reduce){.fact-big.fresh{animation:none}}
 .fact-rand #frand{width:100%}
 .fact-big{border-color:#6a5626;background:linear-gradient(180deg,#1d2a1f,#14201C)}
 .fact-big p{color:var(--ink);font-size:16px}
@@ -4065,21 +4073,32 @@ function tipsHTML(D){
    D.tips.map(function(t){return '<div class="card"><h3>'+esc(t.title)+'</h3><p>'+esc(t.text)+'</p></div>';}).join('')+
   '</div></div></section>';
 }
-var factCat='all';
+var factCat='all', factPick=-1, factSeen=[];
+function randFactHTML(F){
+  if(!F.length) return '';
+  if(factPick<0||factPick>=F.length){
+    if(factSeen.length>=F.length) factSeen=[];
+    var pool=F.map(function(_,i){return i;}).filter(function(i){return factSeen.indexOf(i)<0;});
+    factPick=pool[Math.floor(Math.random()*pool.length)]; factSeen.push(factPick);
+  }
+  var f=F[factPick];
+  return '<div class="card fact fact-big"><div class="fact-cat">'+esc(f.cat)+'</div><h3>'+esc(f.title)+'</h3><p>'+esc(f.text)+'</p></div>';
+}
 function factsHTML(D){
   var F=D.facts||[], cats=[];F.forEach(function(f){if(cats.indexOf(f.cat)<0)cats.push(f.cat);});
   var shown=F.map(function(f,i){return [f,i];}).filter(function(x){return factCat==='all'||x[0].cat===factCat;});
   return '<section id="ciekawostki"><div class="wrap"><div class="sec-h"><h2>Ciekawostki</h2><span class="progress">'+F.length+' ciekawostek</span></div>'+
    '<p class="seclead">Do poczytania przed wyjazdem: o Londynie, świętach po angielsku i Harrym Potterze w Londynie.</p>'+
+   '<div class="fact-rand"><div id="frand">'+randFactHTML(F)+'</div><button class="btn red" data-frand="1">Losuj kolejną ciekawostkę</button></div>'+
+   '<h3 class="fact-all">Wszystkie ciekawostki</h3>'+
    '<div class="mapchips">'+[['all','Wszystkie']].concat(cats.map(function(c){return [c,c];})).map(function(c){return '<button class="mchip'+(factCat===c[0]?' on':'')+'" data-fc="'+esc(c[0])+'" style="--mc:var(--hero-gold)">'+esc(c[1])+'</button>';}).join('')+'</div>'+
-   '<div class="fact-rand"><button class="btn red" data-frand="1">Losuj ciekawostkę</button><div id="frand"></div></div>'+
    '<div class="facts-grid">'+shown.map(function(x){var f=x[0];return '<div class="card fact" id="f'+x[1]+'"><div class="fact-cat">'+esc(f.cat)+'</div><h3>'+esc(f.title)+'</h3><p>'+esc(f.text)+'</p></div>';}).join('')+'</div></div></section>';
 }
 document.addEventListener('click',function(ev){
   var t=ev.target.closest&&ev.target.closest('[data-fc],[data-frand]'); if(!t) return;
   if(t.hasAttribute('data-fc')){factCat=t.getAttribute('data-fc');render();return;}
-  var F=(data.facts||[]); if(!F.length) return; var f=F[Math.floor(Math.random()*F.length)];
-  var el=document.getElementById('frand'); if(el) el.innerHTML='<div class="card fact fact-big"><div class="fact-cat">'+esc(f.cat)+'</div><h3>'+esc(f.title)+'</h3><p>'+esc(f.text)+'</p></div>';
+  var F=(data.facts||[]); if(!F.length) return; factPick=-1;
+  var el=document.getElementById('frand'); if(el){el.innerHTML=randFactHTML(F); var c=el.firstChild; if(c){c.classList.add('fresh');}}
 });
 /* ---------- QUIZ ---------- */
 var QZ=null;
