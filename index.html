@@ -1663,7 +1663,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
       "dur": 30,
       "place": "346A South Lambeth Rd, London SW8 1UQ"
      }
-    ]
+    ],
+    "mymap": "https://www.google.com/maps/d/u/0/edit?mid=14uWinv8FKWrdJ9unRnOriIkVbsUlWY0&usp=sharing"
    }
   },
   {
@@ -2568,7 +2569,8 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
       "dur": 30,
       "place": "Tottenham Court Road Station, London"
      }
-    ]
+    ],
+    "mymap": "https://www.google.com/maps/d/u/0/edit?mid=1vNRogKIK3sT8BUurFco7VmWBsPzmGA8&usp=sharing"
    }
   },
   {
@@ -4781,7 +4783,7 @@ function chip(line,text){
 }
 var variant=(ls('londyn-variant')==='B')?'B':'A';
 function evsOf(d){return (variant==='B'&&d.alt&&d.alt.events)?d.alt.events:d.events;}
-function dayView(d){var B=variant==='B'&&d.alt;return {title:B&&d.alt.title||d.title,summary:B&&d.alt.summary||d.summary,events:evsOf(d)};}
+function dayView(d){var B=variant==='B'&&d.alt;return {title:B&&d.alt.title||d.title,summary:B&&d.alt.summary||d.summary,events:evsOf(d),mymap:B?(d.alt.mymap||''):d.mymap};}
 function variantHTML(D,d){
   if(!d.alt) return '';
   return '<div class="variant" role="group" aria-label="Wersja planu"><button class="vbtn'+(variant==='A'?' on':'')+'" data-variant="A" aria-pressed="'+(variant==='A')+'"><b>Wersja A</b><span>plan podstawowy</span></button>'+
@@ -4805,7 +4807,7 @@ function dayHTML(D){
   if(isToday){V.events.forEach(function(e,i){var m=toMin(e.t);if(m!=null&&m<=nowM) nowIdx=i;});}
   var routes=routeUrls(V.events);
   var head='<div class="dayhead"><div class="date">'+esc(d.dow)+' · '+plDate(d.date)+'</div><h3>'+esc(V.title)+'</h3><p>'+esc(V.summary)+'</p>'+variantHTML(D,d)+
-    ((routes.length||d.mymap||D.trip.foodmap)?'<div class="routes">'+(d.mymap?'<a class="btn primary" href="'+esc(d.mymap)+'" target="_blank" rel="noopener">'+svg('pin')+'Nasza mapa dnia</a>':'')+(D.trip.foodmap?'<a class="btn gold" href="'+esc(D.trip.foodmap)+'" target="_blank" rel="noopener">'+svg('food')+'Mapa jedzenia</a>':'')+routes.map(function(u,i){return '<a class="btn" href="'+esc(u)+'" target="_blank" rel="noopener">'+svg('route')+'Trasa piesza w Google Maps'+(routes.length>1?' ('+(i+1)+'/'+routes.length+')':'')+'</a>';}).join('')+'</div>':'')+
+    ((routes.length||V.mymap||D.trip.foodmap)?'<div class="routes">'+(V.mymap?'<a class="btn primary" href="'+esc(V.mymap)+'" target="_blank" rel="noopener">'+svg('pin')+'Nasza mapa dnia</a>':'')+(D.trip.foodmap?'<a class="btn gold" href="'+esc(D.trip.foodmap)+'" target="_blank" rel="noopener">'+svg('food')+'Mapa jedzenia</a>':'')+routes.map(function(u,i){return '<a class="btn" href="'+esc(u)+'" target="_blank" rel="noopener">'+svg('route')+'Trasa piesza w Google Maps'+(routes.length>1?' ('+(i+1)+'/'+routes.length+')':'')+'</a>';}).join('')+'</div>':'')+
   '</div>';
   var tl='<ol class="tl">'+V.events.map(function(e,i){
     var P=e.img&&photos[e.img], pid='ph-'+d.id+'-'+i;
