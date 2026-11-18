@@ -1339,7 +1339,7 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
    "mymap": "https://www.google.com/maps/d/u/0/edit?mid=12DBNbPbNUucAI3CAyBHENU12TH4ohB4&usp=sharing",
    "alt": {
     "title": "Przylot, Msza i królewski Westminster",
-    "summary": "Wersja B: bagaże zostają w przechowalni na cały dzień. Po Mszy w Westminster Cathedral zostajemy w okolicy i spacerem przejmujemy część poniedziałku: Opactwo Westminsterskie z zewnątrz, Big Ben i Parlament, Whitehall z Downing Street, Horse Guards i budką Ministerstwa Magii, Trafalgar Square i National Gallery. O 16:00 pokaz padającego śniegu w Leadenhall Market, potem Waterloo Bridge z widokiem na podświetlony Parlament i katedrę św. Pawła, a wieczór na jarmarku Southbank. Bagaże odbieramy ok. 18:50. Bez tarasów widokowych.",
+    "summary": "Wersja B: bagaże zostają w przechowalni na cały dzień. Po Mszy w Westminster Cathedral zostajemy w okolicy i spacerem przejmujemy część poniedziałku: Opactwo Westminsterskie z zewnątrz, Big Ben i Parlament, Whitehall z Downing Street, Horse Guards i budką Ministerstwa Magii, Trafalgar Square i National Gallery. O 16:00 pokaz padającego śniegu w Leadenhall Market, potem spacer obok Tower of London i rejs statkiem po Tamizie po zmroku do London Eye, a wieczór na jarmarku Southbank. Bagaże odbieramy ok. 18:50. Bez tarasów widokowych.",
     "events": [
      {
       "t": "04:15",
@@ -1605,46 +1605,49 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
      },
      {
       "t": "16:20",
-      "kind": "train",
-      "title": "Monument → Temple",
-      "note": "3 przystanki na zachód. Ze stacji Temple ok. 5 min pieszo na Waterloo Bridge.",
-      "move": "District lub Circle line · ok. 8 min",
-      "line": "district",
-      "q": "51.5111,-0.1141",
-      "r": true,
-      "dur": 20,
-      "place": "Temple Station, London"
-     },
-     {
-      "t": "16:40",
       "kind": "sight",
-      "title": "Waterloo Bridge o zmroku",
-      "note": "Z jego środka jest jeden z najsłynniejszych widoków Londynu: w jedną stronę podświetlony Parlament, Big Ben i London Eye, w drugą kopuła katedry św. Pawła i wieżowce City. Po drugiej stronie mostu schodzimy prosto na jarmark Southbank.",
-      "move": "pieszo ze stacji Temple ok. 5 min",
+      "title": "Spacer do Tower Pier",
+      "note": "Z Leadenhall Market w dół do Tamizy, obok podświetlonych murów Tower of London.",
+      "move": "pieszo ok. 12 min",
       "line": "walk",
-      "q": "51.5085,-0.1171",
+      "q": "51.5072,-0.0802",
       "r": true,
-      "dur": 20,
-      "place": "Waterloo Bridge, London",
+      "img": "tower",
+      "dur": 15,
+      "place": "Tower Millennium Pier, London",
       "pins": [
        {
-        "name": "Waterloo Bridge",
-        "q": "51.5085,-0.1171",
-        "place": "Waterloo Bridge, London"
+        "name": "Tower of London",
+        "q": "51.5081,-0.0759",
+        "place": "Tower of London"
        }
-      ]
+      ],
+      "rname": "Tower Pier"
      },
      {
-      "t": "17:00",
+      "t": "16:35",
+      "kind": "bus",
+      "title": "Uber Boat: Tower Pier → London Eye Pier",
+      "note": "Rejs po Tamizie już po zmroku, ok. 25 min: pod Tower Bridge w tle, pod London Bridge, obok Shard, Globe Theatre i podświetlonej katedry św. Pawła, pod Millennium Bridge, który śmierciożercy niszczą w „Księciu Półkrwi”, a na koniec widok na Parlament i London Eye. Statki odpływają co ok. 20 min. Płacimy zbliżeniowo przy wejściu na przystań (każdy swoją kartą, tą samą przy wyjściu), ok. £10 od osoby. Najlepsze widoki z tylnego pokładu, ale wieczorem jest tam zimno.",
+      "move": "",
+      "line": "",
+      "q": "51.5034,-0.1197",
+      "r": false,
+      "img": "uberboat",
+      "dur": 30,
+      "place": "London Eye Pier, London"
+     },
+     {
+      "t": "17:05",
       "kind": "xmas",
       "title": "Southbank Centre Winter Market",
-      "note": "Drewniane domki nad Tamizą tuż przy London Eye, grzaniec i kolacja z budek. Stoiska czynne do 22:00.",
-      "move": "pieszo ok. 5 min",
-      "line": "walk",
+      "note": "Wysiadamy na London Eye Pier, tuż przy kole i jarmarku. Drewniane domki nad Tamizą, grzaniec i kolacja z budek. Stoiska czynne do 22:00.",
+      "move": "Uber Boat · ok. 25 min",
+      "line": "boat",
       "q": "51.5050,-0.1180",
       "r": true,
       "img": "southbank",
-      "dur": 90,
+      "dur": 85,
       "place": "Southbank Centre Winter Market, London",
       "pins": [
        {
