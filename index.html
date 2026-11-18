@@ -1339,7 +1339,7 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
    "mymap": "https://www.google.com/maps/d/u/0/edit?mid=12DBNbPbNUucAI3CAyBHENU12TH4ohB4&usp=sharing",
    "alt": {
     "title": "Przylot, Msza i królewski Westminster",
-    "summary": "Wersja B: bagaże zostają w przechowalni na cały dzień. Po Mszy w Westminster Cathedral zostajemy w okolicy i spacerem przejmujemy część poniedziałku: Opactwo Westminsterskie z zewnątrz, Big Ben i Parlament, Whitehall z Downing Street, Horse Guards i budką Ministerstwa Magii, Trafalgar Square i National Gallery. Po zmroku Waterloo Bridge z widokiem na podświetlony Parlament i katedrę św. Pawła, a wieczór na jarmarku Southbank. Bagaże odbieramy ok. 18:50. Bez tarasów widokowych i bez rejsu, za to wszystko blisko siebie.",
+    "summary": "Wersja B: bagaże zostają w przechowalni na cały dzień. Po Mszy w Westminster Cathedral zostajemy w okolicy i spacerem przejmujemy część poniedziałku: Opactwo Westminsterskie z zewnątrz, Big Ben i Parlament, Whitehall z Downing Street, Horse Guards i budką Ministerstwa Magii, Trafalgar Square i National Gallery. O 16:00 pokaz padającego śniegu w Leadenhall Market, potem Waterloo Bridge z widokiem na podświetlony Parlament i katedrę św. Pawła, a wieczór na jarmarku Southbank. Bagaże odbieramy ok. 18:50. Bez tarasów widokowych.",
     "events": [
      {
       "t": "04:15",
@@ -1556,12 +1556,12 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
       "t": "14:45",
       "kind": "sight",
       "title": "National Gallery",
-      "note": "Tuż przy Trafalgar Square, wstęp wolny, w niedzielę otwarte do 18:00. Ok. 1 h 15 min na najsłynniejsze obrazy: Słoneczniki Van Gogha, Wóz z sianem Constable'a, Turnera, Portret Arnolfinich Van Eycka i Madonnę w grocie Leonarda.",
+      "note": "Tuż przy Trafalgar Square, wstęp wolny. 45 minut na najsłynniejsze obrazy: Słoneczniki Van Gogha, Wóz z sianem Constable'a, Turnera i Portret Arnolfinich Van Eycka. Wychodzimy o 15:30, żeby zdążyć na śnieg w Leadenhall Market o 16:00.",
       "move": "pieszo ok. 2 min",
       "line": "walk",
       "q": "51.5089,-0.1283",
       "r": true,
-      "dur": 75,
+      "dur": 45,
       "place": "National Gallery, London",
       "pins": [
        {
@@ -1572,15 +1572,59 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
       ]
      },
      {
-      "t": "16:00",
+      "t": "15:30",
+      "kind": "train",
+      "title": "Embankment → Monument",
+      "note": "Z National Gallery ok. 5 min pieszo do stacji Embankment, potem 4 przystanki na wschód. Z Monument ok. 5 min do Leadenhall Market.",
+      "move": "District lub Circle line · ok. 10 min",
+      "line": "district",
+      "q": "51.5108,-0.0863",
+      "r": true,
+      "dur": 20,
+      "place": "Monument Station, London"
+     },
+     {
+      "t": "15:50",
+      "kind": "xmas",
+      "title": "Leadenhall Market: śnieg o 16:00",
+      "note": "Wiktoriańska hala ze szklanym dachem i świątecznymi światłami. Od 20 listopada codziennie o 12:00, 14:00, 16:00 i 18:00 w hali „pada śnieg”. Łapiemy pokaz o 16:00, akurat o zmroku. W „Kamieniu Filozoficznym” Hagrid prowadzi tędy Harry'ego na Ulicę Pokątną, a w zaułku Bull's Head Passage szukamy niebieskich drzwi do Dziurawego Kotła. W niedzielę sklepy są zamknięte.",
+      "move": "pieszo ze stacji Monument ok. 5 min",
+      "line": "walk",
+      "q": "51.5128,-0.0835",
+      "r": true,
+      "img": "leadenhall",
+      "dur": 30,
+      "place": "Leadenhall Market, London",
+      "pins": [
+       {
+        "name": "Leadenhall Market",
+        "q": "51.5128,-0.0835",
+        "place": "Leadenhall Market, London"
+       }
+      ]
+     },
+     {
+      "t": "16:20",
+      "kind": "train",
+      "title": "Monument → Temple",
+      "note": "3 przystanki na zachód. Ze stacji Temple ok. 5 min pieszo na Waterloo Bridge.",
+      "move": "District lub Circle line · ok. 8 min",
+      "line": "district",
+      "q": "51.5111,-0.1141",
+      "r": true,
+      "dur": 20,
+      "place": "Temple Station, London"
+     },
+     {
+      "t": "16:40",
       "kind": "sight",
       "title": "Waterloo Bridge o zmroku",
-      "note": "Z National Gallery idziemy Strandem na Waterloo Bridge. Z jego środka jest jeden z najsłynniejszych widoków Londynu: w jedną stronę podświetlony Parlament, Big Ben i London Eye, w drugą kopuła katedry św. Pawła i wieżowce City. Po drugiej stronie mostu schodzimy prosto na jarmark Southbank.",
-      "move": "pieszo przez Strand ok. 12 min",
+      "note": "Z jego środka jest jeden z najsłynniejszych widoków Londynu: w jedną stronę podświetlony Parlament, Big Ben i London Eye, w drugą kopuła katedry św. Pawła i wieżowce City. Po drugiej stronie mostu schodzimy prosto na jarmark Southbank.",
+      "move": "pieszo ze stacji Temple ok. 5 min",
       "line": "walk",
       "q": "51.5085,-0.1171",
       "r": true,
-      "dur": 30,
+      "dur": 20,
       "place": "Waterloo Bridge, London",
       "pins": [
        {
@@ -1591,7 +1635,7 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
       ]
      },
      {
-      "t": "16:30",
+      "t": "17:00",
       "kind": "xmas",
       "title": "Southbank Centre Winter Market",
       "note": "Drewniane domki nad Tamizą tuż przy London Eye, grzaniec i kolacja z budek. Stoiska czynne do 22:00.",
@@ -1600,7 +1644,7 @@ footer .fd{font-family:var(--f-display);font-size:22px;color:var(--ink)}
       "q": "51.5050,-0.1180",
       "r": true,
       "img": "southbank",
-      "dur": 120,
+      "dur": 90,
       "place": "Southbank Centre Winter Market, London",
       "pins": [
        {
